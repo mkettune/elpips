@@ -1,0 +1,2 @@
+# Example parameters. Not necessarily the best ones but should be usable.
+python train_run.py --metric=elpips_squeeze_maxpool --name=elpips_squeezenet --batch_size 50 --display_freq 50 --save_latest_freq=20000

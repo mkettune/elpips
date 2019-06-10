@@ -1,0 +1,13 @@
+name: elpips
+channels:
+  - defaults
+dependencies:
+  - python=3.6.3
+  - numpy=1.16.2
+  - tensorflow-gpu=1.12.0
+  - imageio=2.5.0
+  - scipy=1.2.1
+  - scikit-image=0.15.0
+
+# Install: conda env create -f environment.yml
+# Update:  conda env update -f environment.yml --prune
