@@ -13,6 +13,10 @@ This repository contains the implementation of the image similarity metric propo
 >
 > <p align="justify"><b>Abstract:</b> <i>It has been recently shown that the hidden variables of convolutional neural net-works make for an efficient perceptual similarity metric that accurately predicts human judgment on relative image similarity assessment. First, we show that such learned perceptual similarity metrics (LPIPS) are susceptible to adversarial attacks that dramatically contradict human visual similarity judgment. While this is not surprising in light of neural networks’ well-known weakness to adversarial perturbations, we proceed to show that self-ensembling with an infinite family of random transformations of the input — a technique known not to render classification networks robust — is enough to turn the metric robust against attack, while retaining predictive power on human judgments. Finally, we study the geometry imposed by our novel self-ensembled metric (E-LPIPS) on the space of natural images. We find evidence of “perceptual convexity” by showing that convex combinations of similar-looking images retain appearance, and that discrete geodesics yield meaningful frame interpolation and texture morphing, all without explicit correspondences.</i></p>
 
+## Acknowledgements
+
+We thank Pauli Kemppinen, Frédo Durand, Miika Aittala, Sylvain Paris, Alexei Efros, Richard Zhang, Taesung Park, Tero Karras, Samuli Laine, Timo Aila, and Antti Tarvainen for in-depth discussions; and Seyoung Park for helping with the TensorFlow port of LPIPS. We acknowledge the computational resources provided by the Aalto Science-IT project.
+
 ## Resources
 
 All material related to our paper is available via the following links:
@@ -240,7 +244,3 @@ to the constructor of class elpips.Metric.
 
 ## train_test_2afc.py
 Runs the 2AFC test for a model. See file 'train_test_2afc_squeeze_example.sh' for an example.
-
-## Acknowledgements
-
-We thank Pauli Kemppinen, Frédo Durand, Miika Aittala, Sylvain Paris, Alexei Efros, Richard Zhang, Taesung Park, Tero Karras, Samuli Laine, Timo Aila, and Antti Tarvainen for in-depth discussions; and Seyoung Park for helping with the TensorFlow port of LPIPS. We acknowledge the computational resources provided by the Aalto Science-IT project.
