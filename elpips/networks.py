@@ -75,7 +75,7 @@ class squeezenet1_1(Network):
 		super(squeezenet1_1, self).__init__(use_net_dropout, net_dropout_keep_prob, dtype=dtype)
 		
 		feature_path = os.path.join(DATA_DIR, "squeeze_pytorch_transposed_nonlinear_features.npy") 
-		self.features = np.load(feature_path).item() if custom_net_weights is None else custom_net_weights
+		self.features = np.load(feature_path, allow_pickle=True).item() if custom_net_weights is None else custom_net_weights
 
 		self.trainable = trainable
 		self.features = make_trainable(self.features, trainable, 'squeezenet')
@@ -272,7 +272,7 @@ class squeezenet1_1_full_maxpool(Network):
 		super(squeezenet1_1_full_maxpool, self).__init__(use_net_dropout, net_dropout_keep_prob, dtype=dtype)
 		
 		feature_path = os.path.join(DATA_DIR, "squeeze_pytorch_transposed_nonlinear_features.npy") 
-		self.features = np.load(feature_path).item() if custom_net_weights is None else custom_net_weights
+		self.features = np.load(feature_path, allow_pickle=True).item() if custom_net_weights is None else custom_net_weights
 
 		self.trainable = trainable
 		self.features = make_trainable(self.features, trainable, 'squeezenet_full_avg')
@@ -471,7 +471,7 @@ class vgg16(Network):
 		super(vgg16, self).__init__(use_net_dropout, net_dropout_keep_prob, dtype=dtype)
 		
 		feature_path = os.path.join(DATA_DIR, "vgg16_pytorch_transposed_nonlinear_features.npy") 
-		self.features = np.load(feature_path).item() if custom_net_weights is None else custom_net_weights
+		self.features = np.load(feature_path, allow_pickle=True).item() if custom_net_weights is None else custom_net_weights
 		
 		self.trainable = trainable
 		self.features = make_trainable(self.features, trainable, 'vgg')
@@ -674,7 +674,7 @@ class vgg16_full_avg(Network):
 		super(vgg16_full_avg, self).__init__(use_net_dropout, net_dropout_keep_prob, dtype=dtype)
 		
 		feature_path = os.path.join(DATA_DIR, "vgg16_pytorch_transposed_nonlinear_features.npy") 
-		self.features = np.load(feature_path).item() if custom_net_weights is None else custom_net_weights
+		self.features = np.load(feature_path, allow_pickle=True).item() if custom_net_weights is None else custom_net_weights
 		
 		self.trainable = trainable
 		self.features = make_trainable(self.features, trainable, 'vgg_full_avg')

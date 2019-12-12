@@ -57,25 +57,25 @@ class PNetLin(object):
 			self.net = networks.vgg16(use_net_dropout=use_net_dropout, net_dropout_keep_prob=net_dropout_keep_prob, trainable=self.net_trainable, custom_net_weights=custom_net_weights, dtype=dtype)
 			
 			if self.linear_weight_as_dict is None:
-				self.linear_weight_as_dict = np.load(os.path.join(DATA_DIR, "vgg_maxpool.npy")).item()
+				self.linear_weight_as_dict = np.load(os.path.join(DATA_DIR, "vgg_maxpool.npy"), allow_pickle=True).item()
 						
 		elif pnet_type == 'squeeze':
 			self.net = networks.squeezenet1_1(use_net_dropout=use_net_dropout, net_dropout_keep_prob=net_dropout_keep_prob, trainable=self.net_trainable, custom_net_weights=custom_net_weights, dtype=dtype)
 			
 			if self.linear_weight_as_dict is None:
-				self.linear_weight_as_dict = np.load(os.path.join(DATA_DIR, "squeeze.npy")).item()
+				self.linear_weight_as_dict = np.load(os.path.join(DATA_DIR, "squeeze.npy"), allow_pickle=True).item()
 
 		elif pnet_type == 'squeeze_ensemble_maxpool':
 			self.net = networks.squeezenet1_1_full_maxpool(use_net_dropout=use_net_dropout, net_dropout_keep_prob=net_dropout_keep_prob, trainable=self.net_trainable, custom_net_weights=custom_net_weights, dtype=dtype)
 			
 			if self.linear_weight_as_dict is None:
-				self.linear_weight_as_dict = np.load(os.path.join(DATA_DIR, "squeeze_full_maxpool.npy")).item()
+				self.linear_weight_as_dict = np.load(os.path.join(DATA_DIR, "squeeze_full_maxpool.npy"), allow_pickle=True).item()
 			
 		elif pnet_type == 'vgg_ensemble':
 			self.net = networks.vgg16_full_avg(use_net_dropout=use_net_dropout, net_dropout_keep_prob=net_dropout_keep_prob, trainable=self.net_trainable, custom_net_weights=custom_net_weights, dtype=dtype)
 			
 			if self.linear_weight_as_dict is None:
-				self.linear_weight_as_dict = np.load(os.path.join(DATA_DIR, "vgg_full_avg.npy")).item()
+				self.linear_weight_as_dict = np.load(os.path.join(DATA_DIR, "vgg_full_avg.npy"), allow_pickle=True).item()
 		
 		else:
 			raise Exception('Unsupported pnet_type.')
