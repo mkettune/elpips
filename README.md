@@ -3,24 +3,24 @@
 ![TensorFlow 1.12](https://img.shields.io/badge/tensorflow-1.12-green.svg)
 
 ![Teaser image](./media/ablation_teaser.png)
-**Figure 1:** *LPIPS (red) allows modifying an image to visually resemble a target while staying close to the source in LPIPS distance. We fortify LPIPS by applying an ensemble of random transformations to the inputs. Our novel E-LPIPS metric (green) is more robust: it permits less visual deviation for the same metric distance.*
-
- <!-- *LPIPS allows modifying an image to visually resemble a target while staying close to the source in LPIPS distance. We fortify LPIPS by applying an ensemble of random transformations to the inputs. The resulting metric is more robust: it permits less visual deviation for the same metric distance.*
--->
-<!-- *We fortify LPIPS by using an ensemble of random transformations. The resulting metric is more robust: it permits less visual deviation given a fixed metric distance budget.* -->
+<p align="justify"><b>Figure 1:</b> <i>The neural perceptual image similarity metric LPIPS allows crafting images that look very different from a source image, while staying close to the original in terms of the metric (red). We fortify LPIPS by applying an ensemble of random transformations to the images before measurement: each additional transformation decreases the amount by which the image can be changed while staying at a constant LPIPS distance from the original. Our full E-LPIPS metric (green) retains the predictive power of LPIPS but is much more robust.</i></p>
 
 This repository contains the implementation of the image similarity metric proposed in the following paper:
 
 > **E-LPIPS: Robust Perceptual Image Similarity via Random Transformation Ensembles**<br>
 > Markus Kettunen (Aalto University), Erik Härkönen (Aalto University), Jaakko Lehtinen (Aalto University, NVIDIA)<br>
-> http://arxiv.com (TODO)
+> https://arxiv.org/abs/1906.03973
 >
-> **Abstract:** *It has been recently shown that the hidden variables of convolutional neural net-works make for an efficient perceptual similarity metric that accurately predicts human judgment on relative image similarity assessment. First, we show that such learned perceptual similarity metrics (LPIPS) are susceptible to adversarial attacks that dramatically contradict human visual similarity judgment. While this is not surprising in light of neural networks’ well-known weakness to adversarial perturbations, we proceed to show that self-ensembling with an infinite family of random transformations of the input — a technique known not to render classification networks robust — is enough to turn the metric robust against attack, while retaining predictive power on human judgments. Finally, we study the geometry imposed by our our novel self-ensembled metric (E-LPIPS) on the space of natural images. We find evidence of “perceptual convexity” by showing that convex combinations of similar-looking images retain appearance, and that discrete geodesics yield meaningful frame interpolation and texture morphing, all without explicit correspondences.*
+> <p align="justify"><b>Abstract:</b> <i>It has been recently shown that the hidden variables of convolutional neural net-works make for an efficient perceptual similarity metric that accurately predicts human judgment on relative image similarity assessment. First, we show that such learned perceptual similarity metrics (LPIPS) are susceptible to adversarial attacks that dramatically contradict human visual similarity judgment. While this is not surprising in light of neural networks’ well-known weakness to adversarial perturbations, we proceed to show that self-ensembling with an infinite family of random transformations of the input — a technique known not to render classification networks robust — is enough to turn the metric robust against attack, while retaining predictive power on human judgments. Finally, we study the geometry imposed by our novel self-ensembled metric (E-LPIPS) on the space of natural images. We find evidence of “perceptual convexity” by showing that convex combinations of similar-looking images retain appearance, and that discrete geodesics yield meaningful frame interpolation and texture morphing, all without explicit correspondences.</i></p>
+
+## Acknowledgements
+
+We thank Pauli Kemppinen, Frédo Durand, Miika Aittala, Sylvain Paris, Alexei Efros, Richard Zhang, Taesung Park, Tero Karras, Samuli Laine, Timo Aila, and Antti Tarvainen for in-depth discussions; and Seyoung Park for helping with the TensorFlow port of LPIPS. We acknowledge the computational resources provided by the Aalto Science-IT project.
 
 ## Resources
 
 All material related to our paper is available via the following links:
-* <a href="http://arxiv.com/">Paper PDF (TODO)</a>
+* <a href="https://arxiv.org/abs/1906.03973">Paper PDF</a>
 * <a href="media/ELPIPS_Supplemental.pdf">Supplemental PDF</a>
 * <a href="../../releases/download/Supplemental/elpips_supplemental.zip">Supplemental images and videos (ZIP)</a>
 
@@ -244,7 +244,3 @@ to the constructor of class elpips.Metric.
 
 ## train_test_2afc.py
 Runs the 2AFC test for a model. See file 'train_test_2afc_squeeze_example.sh' for an example.
-
-## Acknowledgements
-
-We thank Pauli Kemppinen, Frédo Durand, Miika Aittala, Sylvain Paris, Alexei Efros, Richard Zhang, Taesung Park, and Antti Tarvainen for in-depth discussions and helpful comments, and Seyoung Park for helping with the TensorFlow port of LPIPS. We acknowledge the computational resources provided by the Aalto Science-IT project.
